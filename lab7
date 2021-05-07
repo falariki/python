@@ -1,0 +1,16 @@
+# Use the file name mbox-short.txt as the file name
+fname = input("Enter file name: ")
+fh = open(fname)
+count1 = 0
+count2 = 0
+for line in fh:
+    if not line.startswith("X-DSPAM-Confidence:") : continue
+    line = line.rstrip()
+    count1 = count1 + 1
+    middle = line.find(':',0)
+    rest = line[middle+1:]
+    value = float(rest)
+    count2 = count2 + value
+    
+a = count2/count1
+print("Average spam confidence:", a)

@@ -1,12 +1,12 @@
-fname = input("Enter file name: ")
+fname = input("Enter file name: ")  #use romeo.txt
 fh = open(fname)
-lst = list()
+lst = list()   #created empty list
 for line in fh:
     line = line.rstrip()
     words = line.split()
     #print(words)
     for i in words:
-        if i not in lst:
+        if i not in lst:   #checked if the word is duplicating 
             lst.append(i)
-lst.sort()
+lst.sort()  #sorting in alhabetical order
 print(lst)
